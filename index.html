@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAKLEZ — Search. Verify. Understand.</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #202124;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 7%;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .tagline {
+      color: #666;
+      font-size: 14px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 90px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 58px;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 35px;
+    }
+
+    .search-box {
+      display: flex;
+      max-width: 700px;
+      margin: auto;
+      border: 1px solid #d9d9d9;
+      border-radius: 35px;
+      padding: 7px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    }
+
+    input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 15px 20px;
+      font-size: 17px;
+      border-radius: 30px;
+    }
+
+    button {
+      border: none;
+      border-radius: 28px;
+      padding: 14px 24px;
+      background: #111;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 45px;
+    }
+
+    .feature {
+      border: 1px solid #e5e5e5;
+      border-radius: 15px;
+      padding: 18px 24px;
+      background: #fafafa;
+    }
+
+    .results {
+      max-width: 700px;
+      margin: 55px auto 0;
+      text-align: left;
+    }
+
+    .result {
+      border-bottom: 1px solid #eee;
+      padding: 20px 0;
+    }
+
+    .result h3 {
+      margin-bottom: 7px;
+    }
+
+    .source {
+      color: #16803c;
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+
+    .result p {
+      color: #555;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #888;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 42px;
+      }
+
+      header {
+        padding: 18px;
+      }
+
+      .tagline {
+        display: none;
+      }
+
+      main {
+        margin-top: 55px;
+      }
+
+      .search-box {
+        width: 100%;
+      }
+
+      input {
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">SAKLEZ</div>
+    <div class="tagline">Search. Verify. Understand.</div>
+  </header>
+
+  <main>
+
+    <h1>SAKLEZ</h1>
+
+    <div class="subtitle">
+      Search the web. Understand the answer. Check the evidence.
+    </div>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search anything..."
+      >
+      <button onclick="search()">Search</button>
+    </div>
+
+    <div class="features">
+      <div class="feature">🤖 Ask SAKLEZ</div>
+      <div class="feature">✅ Verify</div>
+      <div class="feature">🔐 Privacy First</div>
+      <div class="feature">🛡️ Safety</div>
+    </div>
+
+    <div class="results" id="results"></div>
+
+  </main>
+
+  <footer>
+    © 2026 SAKLEZ — Search. Verify. Understand.
+  </footer>
+
+  <script>
+    function search() {
+      const query = document.getElementById("searchInput").value.trim();
+      const results = document.getElementById("results");
+
+      if (!query) {
+        results.innerHTML = "<p>Please enter a search.</p>";
+        return;
+      }
+
+      results.innerHTML = `
+        <div class="result">
+          <h3>SAKLEZ Search Result</h3>
+          <div class="source">saklez.com</div>
+          <p>
+            You searched for: <strong>${query}</strong>
+          </p>
+          <p>
+            Real web search, AI answers and source verification
+            will be connected in the next development stage.
+          </p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
