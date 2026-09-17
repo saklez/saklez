@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SAKLEZ — Search. Verify. Understand.</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SAKLEZ - Search. Verify. Understand.</title>
 
   <style>
     body {
@@ -80,65 +82,63 @@
 
 <body>
 
-<header>SAKLEZ</header>
+  <header>SAKLEZ</header>
 
-<main>
+  <main>
 
-  <h1>SAKLEZ</h1>
+    <h1>SAKLEZ</h1>
 
-  <p>Search. Verify. Understand.</p>
+    <p>Search. Verify. Understand.</p>
 
-  <div class="search">
-    <input id="query" placeholder="Search anything...">
-    <button onclick="search()">Search</button>
-  </div>
-
-  <div id="result"></div>
-
-</main>
-
-<script>
-
-function search() {
-
-  const query = document.getElementById("query").value.trim();
-
-  if (!query) {
-    document.getElementById("result").innerHTML =
-      "<p>Please enter a search.</p>";
-    return;
-  }
-
-  const googleSearch =
-    "https://www.google.com/search?q=" +
-    encodeURIComponent(query);
-
-  document.getElementById("result").innerHTML = `
-
-    <div class="box">
-
-      <h2>SAKLEZ Search</h2>
-
-      <div class="source">
-        Web Search
-      </div>
-
-      <p>
-        Your search is ready.
-      </p>
-
-      <p>
-        <a href="${googleSearch}" target="_blank">
-          Open web results for "${query}"
-        </a>
-      </p>
-
+    <div class="search">
+      <input id="query" placeholder="Search anything...">
+      <button onclick="search()">Search</button>
     </div>
 
-  `;
-}
+    <div id="result"></div>
 
-</script>
+  </main>
+
+  <script>
+
+    function search() {
+
+      const query = document.getElementById("query").value.trim();
+
+      if (!query) {
+        document.getElementById("result").innerHTML =
+          "<p>Please enter a search.</p>";
+        return;
+      }
+
+      const googleSearch =
+        "https://www.google.com/search?q=" +
+        encodeURIComponent(query);
+
+      document.getElementById("result").innerHTML = `
+
+        <div class="box">
+
+          <h2>SAKLEZ Search</h2>
+
+          <div class="source">
+            Web Search
+          </div>
+
+          <p>Your search is ready.</p>
+
+          <p>
+            <a href="${googleSearch}" target="_blank">
+              Open web results for "${query}"
+            </a>
+          </p>
+
+        </div>
+
+      `;
+    }
+
+  </script>
 
 </body>
 </html>
