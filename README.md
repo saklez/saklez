@@ -7,6 +7,10 @@
   <title>SAKLEZ - Search. Verify. Understand.</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -77,6 +81,28 @@
       color: green;
       font-size: 14px;
     }
+
+    a {
+      color: #1a73e8;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin-top: 40px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .search {
+        width: 100%;
+      }
+
+      input {
+        min-width: 0;
+      }
+    }
   </style>
 </head>
 
@@ -91,7 +117,12 @@
     <p>Search. Verify. Understand.</p>
 
     <div class="search">
-      <input id="query" placeholder="Search anything...">
+      <input
+        id="query"
+        type="text"
+        placeholder="Search anything..."
+      >
+
       <button onclick="search()">Search</button>
     </div>
 
@@ -103,11 +134,15 @@
 
     function search() {
 
-      const query = document.getElementById("query").value.trim();
+      const query = document
+        .getElementById("query")
+        .value
+        .trim();
+
+      const result = document.getElementById("result");
 
       if (!query) {
-        document.getElementById("result").innerHTML =
-          "<p>Please enter a search.</p>";
+        result.innerHTML = "<p>Please enter a search.</p>";
         return;
       }
 
@@ -115,26 +150,25 @@
         "https://www.google.com/search?q=" +
         encodeURIComponent(query);
 
-      document.getElementById("result").innerHTML = `
-
+      result.innerHTML = `
         <div class="box">
-
-          <h2>SAKLEZ Search</h2>
+          <h2>SAKLEZ Search Result</h2>
 
           <div class="source">
             Web Search
           </div>
 
-          <p>Your search is ready.</p>
+          <p>
+            You searched for:
+            <strong>${query}</strong>
+          </p>
 
           <p>
             <a href="${googleSearch}" target="_blank">
-              Open web results for "${query}"
+              Open web results
             </a>
           </p>
-
         </div>
-
       `;
     }
 
