@@ -1,16 +1,23 @@
-## Hi there 👋
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SAKLEZ — Search. Verify. Understand.</title>
+</head>
+<body>
+  <h1>SAKLEZ</h1>
+  <p>Search. Verify. Understand.</p>
 
-<!--
-**saklez/saklez** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+  <input id="search" placeholder="Search anything...">
+  <button onclick="search()">Search</button>
 
-Here are some ideas to get you started:
+  <div id="result"></div>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+  <script>
+    function search() {
+      let q = document.getElementById("search").value;
+      document.getElementById("result").innerHTML =
+        "You searched for: " + q;
+    }
+  </script>
+</body>
+</html>
